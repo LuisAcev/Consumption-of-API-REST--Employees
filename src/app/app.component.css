@@ -1,0 +1,27 @@
+#margen {
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns:  auto auto; 
+      
+}
+
+body{
+
+    background-image: url("../helpers/img1.jpg")
+}
+
+@media only screen and (min-width: 400px) {
+    #margen {
+
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns:  auto auto; 
+          
+    }
+
+    body{
+
+        background-image: url("../helpers/img1.jpg")
+    }
+}

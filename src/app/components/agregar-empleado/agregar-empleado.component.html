@@ -1,0 +1,102 @@
+<div Class="col-md-6 offset-md-3">
+    <h3 class="text-center table-dark"> Registrar Empleado </h3>
+    <form (ngSubmit)="onsubmit()" [formGroup] = "form">
+        <div class="form-group">
+            <label class="text-light">Documento:</label>
+            <input type="number" 
+                   class="form-control"
+                   id="docuemento"
+                   formControlName = "nroDocumento"
+                   name="nroDocumento"
+                   required
+                   placeholder="Ingrese el docuemento del empleado"/>
+        </div>
+
+        <div *ngIf="form.get('nroDocumento')?.touched && form.get('nroDocumento')?.errors?.['required'] "
+             class="alert alert-danger">El campo Documento es obligatorio </div>
+
+        <div class="form-group">
+            <label class="text-light">Nombre:</label>
+            <input type="text" 
+                   class="form-control"
+                   id="nombre"
+                   formControlName = "nombre"
+                   name="nombre"
+                   required
+                   minlength="4"
+                   maxlength="10"
+                   placeholder="Ingrese el nombre del empleado"/>
+        </div>
+
+        <div *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['required'] "
+             class="alert alert-danger">El campo Nombre es obligatorio </div>
+
+        <div *ngIf="form.get('nombre')?.touched && form.get('nombre')?.errors?.['pattern'] "
+             class="alert alert-danger"> No se permiten caracteres o numeros en este campo </div>     
+
+        <div class="form-group">
+            <label class="text-light">Apellido:</label>
+            <input type="text" 
+                   class="form-control"
+                   id="apellido"
+                   formControlName = "apellido"
+                   name="apellido"
+                   required
+                   minlength="4"
+                   maxlength="10"
+                   placeholder="Ingrese el apellido del empleado"/>
+        </div>
+
+        <div *ngIf="form.get('apellido')?.touched && form.get('apellido')?.errors?.['required'] "
+             class="alert alert-danger">El campo Apellido es obligatorio </div>
+
+        <div *ngIf="form.get('apellido')?.touched && form.get('apellido')?.errors?.['pattern'] "
+            class="alert alert-danger"> No se permiten caracteres o numeros en este campo </div>
+
+        <div class="form-group">
+            <label class="text-light">Email:</label>
+            <input type="email" 
+                   class="form-control"
+                   id="email"
+                   formControlName = "email"
+                   name="email"
+                   required
+                   placeholder="Ingrese el email del empleado"/>
+        </div>
+
+        <div *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required'] "
+        class="alert alert-danger">El campo Email es obligatorio </div>
+
+        <div *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['pattern'] "
+            class="alert alert-danger">Ingrese un formato de Email valido (ejemplo@neoris.com)</div>
+
+        <div *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email'] "
+        class="alert alert-danger">El Email no es valido </div>
+
+        <div class="form-group">
+            <label class="text-light">Fecha de Nacimiento:</label>
+            <input type="date" 
+                   class="form-control"
+                   id="fechaNacimiento"
+                   formControlName = "fechaNacimiento"
+                   name="fechaNacimiento"/>
+        </div>
+
+        <div *ngIf="form.get('fechaNacimiento')?.touched && form.get('fechaNacimiento')?.errors?.['required'] "
+             class="alert alert-danger">El campo Fecha de Nacimiento es obligatorio </div>
+
+        <div class="form-group">
+            <label class="text-light">Fecha de Ingreso:</label>
+            <input type="date" 
+                   class="form-control"
+                   id="fechaIngreso"
+                   formControlName = "fechaIngreso"
+                   name="fechaIngreso"/>
+        </div>
+
+        <div *ngIf="form.get('fechaIngreso')?.touched && form.get('fechaIngreso')?.errors?.['required'] "
+             class="alert alert-danger">El campo Fecha de Ingreso es obligatorio </div>
+
+        <button class="btn btn-success btn-lg btn-block" > Guardar </button>
+    </form>
+</div>

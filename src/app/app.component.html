@@ -1,0 +1,14 @@
+<body>
+  <nav class="navbar navbar-light "  style="background-color: #dee2e6;">
+    <form class="form-inline" id ="margen">
+      <button class="btn btn-outline-success" type="button" routerLink="empleados"  routerLinkActive=" active " >Lista Empleados</button>
+      <button class="btn btn-outline-success" type="button" routerLink="agregar-empleado"  routerLinkActive=" active ">Agregar Empleado</button>
+    </form>
+  </nav>
+  
+  <h1 class="text-center text-light" > {{title}} </h1>
+  <div class="container">
+      <router-outlet></router-outlet>
+  </div> 
+</body>
+

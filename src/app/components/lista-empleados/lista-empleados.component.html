@@ -1,0 +1,35 @@
+<table class="table table-striped">
+|   <thead class="table-dark" >
+        <tr>
+            <th class="text-center " >  ID </th>
+            <th class="text-center "> Docuemento </th>
+            <th> Nombre </th>
+            <th> Apellido </th>
+            <th class="text-center"> Email </th>
+            <th > Fecha de Nacimiento </th>
+            <th > Fecha de Ingreso </th>
+            <th > Fecha de Creacion </th>
+            <th > Opciones </th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let empleado of empleados">
+            <td class="text-light">{{empleado.id}}</td>
+            <td class="text-light">{{empleado.nroDocumento}}</td>
+            <td class="text-light">{{empleado.nombre}}</td>
+            <td class="text-light">{{empleado.apellido}}</td>
+            <td class="text-light">{{empleado.email}}</td>
+            <td class="text-light">{{empleado.fechaNacimiento}}</td>
+            <td class="text-light">{{empleado.fechaIngreso}}</td>
+            <td class="text-light">{{empleado.fechaCreacion}}</td>
+            <td id = "margen">
+                <button  class="btn btn-info"     id="btn" (click) = "detallesEmpleado(empleado.id)" >    Detalles</button>
+                <button  class="btn btn-warning"  id="btn" (click) = "actualizarEmpleado(empleado.id)" >  Editar</button>
+                <button  class="btn btn-danger"            (click) = "eliminarEmpleado(empleado.id)" >    Eliminar</button>
+            </td>
+        </tr>   
+    </tbody>
+</table>
+
